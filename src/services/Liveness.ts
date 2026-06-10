@@ -16,10 +16,17 @@ export const getLivenessPhotoUrl = async (photoKey: string): Promise<string> => 
     throw new Error("photoKey vacío");
   }
 
+  // Normaliza la base: tolera que VITE_LIVENESS_URL venga con o sin el
+  // segmento "/liveness" (o con barra final). La ruta real del servicio es
+  // `<root>/liveness/photo/signedUrl`.
+  const base = (LIVENESS_BASE_URL || "")
+    .replace(/\/+$/, "")
+    .replace(/\/liveness$/, "");
+
   const { data } = await axios.post<{ url: string }>(
-    `${LIVENESS_BASE_URL}/photo/signedUrl`,
+    `${base}/liveness/photo/signedUrl`,
     {
-      photoKey 
+      photoKey,
     }
   );
 
