@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Users, NotebookPen } from "lucide-react";
+import { Users, NotebookPen, GraduationCap } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export function Dashboard() {
@@ -32,6 +32,27 @@ export function Dashboard() {
                 className="text-sm font-medium text-primary hover:underline"
               >
                 Ir a usuarios
+              </Link>
+            </CardContent>
+          </Card>
+
+          {/* Estudiantes */}
+          <Card className="flex flex-col justify-between">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <GraduationCap className="w-5 h-5" />
+                Estudiantes
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <p className="text-sm text-muted-foreground">
+                Consulta estudiantes y gestiona su perfil biométrico y solicitudes.
+              </p>
+              <Link
+                to="/dashboard/estudiantes"
+                className="text-sm font-medium text-primary hover:underline"
+              >
+                Ir a estudiantes
               </Link>
             </CardContent>
           </Card>

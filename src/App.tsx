@@ -3,6 +3,8 @@ import { useAuthStore } from "./context/auth.store";
 import { LoginPage } from "./pages/LoginPage";
 import { Dashboard } from "./pages/Dashboard";
 import UsersPage from "./pages/users/UsersPage";
+import StudentsPage from "./pages/students/StudentsPage";
+import StudentDetailPage from "./pages/students/StudentDetailPage";
 import RequestPage from "./pages/requests/RequestPage";
 import RequestDetailPage from "./pages/requests/RequestDetailPage";
 import NotFoundPage from "./pages/NotFound";
@@ -49,6 +51,11 @@ function App() {
         <Route element={<DefaultLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/usuarios" element={<UsersPage />} />
+          <Route path="/dashboard/estudiantes" element={<StudentsPage />} />
+          <Route
+            path="/dashboard/estudiantes/:studentId"
+            element={<StudentDetailPage />}
+          />
           <Route path="/dashboard/solicitudes" element={<RequestPage />} />
           <Route path="/dashboard/solicitudes/:requestId" element={<RequestDetailPage />} />
         </Route>
