@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { UserRound, NotebookPen } from "lucide-react";
+import { UserRound, NotebookPen, GraduationCap } from "lucide-react";
 
 import {
   Sidebar,
@@ -19,6 +19,11 @@ const items = [
     title: "Usuarios",
     url: "/dashboard/usuarios",
     icon: UserRound,
+  },
+  {
+    title: "Estudiantes",
+    url: "/dashboard/estudiantes",
+    icon: GraduationCap,
   },
   {
     title: "Solicitudes",

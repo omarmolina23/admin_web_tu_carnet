@@ -47,7 +47,7 @@ export function LoginPage() {
 
   return (
     <SignLayout orientation="right">
-      <Card className="w-[400px] mx-4 shadow-lg">
+      <Card className="w-full max-w-[400px] mx-4 shadow-lg">
         <CardHeader>
           <CardTitle className="text-center text-xl">Iniciar sesión</CardTitle>
         </CardHeader>
